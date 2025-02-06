@@ -449,9 +449,6 @@ video {
 .mt-6 {
   margin-top: 1.5rem
 }
-.mt-\[112px\] {
-  margin-top: 112px
-}
 .mt-\[26px\] {
   margin-top: 26px
 }
@@ -460,6 +457,9 @@ video {
 }
 .mt-\[51px\] {
   margin-top: 51px
+}
+.mt-\[70px\] {
+  margin-top: 70px
 }
 .block {
   display: block
@@ -659,10 +659,6 @@ video {
   transition-timing-function: cubic-bezier(.4,0,.2,1);
   transition-duration: 150ms
 }
-body {
-  background: radial-gradient(50% 50% at 50% 50%,#24293e 0,#0b0c10 100%);
-  background-attachment: fixed
-}
 .menu-link:hover {
   --tw-text-opacity: 1;
   color: rgb(195 189 151 / var(--tw-text-opacity,1))
@@ -680,10 +676,6 @@ body {
   transition-timing-function: cubic-bezier(.4,0,.2,1);
   transition-duration: .5s;
   transition-timing-function: cubic-bezier(0,0,.2,1)
-}
-.button:hover {
-  --tw-text-opacity: 1;
-  color: rgb(11 12 16 / var(--tw-text-opacity,1))
 }
 .button:focus {
   outline: 2px solid transparent;
@@ -885,7 +877,7 @@ body {
 }
 .decor-item._watcher-view {
   stroke-dashoffset: 0;
-  transition: all 2s linear .1s
+  transition: all 4s linear .5s
 }
 .decor-item--left {
   top: 0;
@@ -927,23 +919,31 @@ body {
   -webkit-transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
-.decor-item--bottom,
+.decor-item--about-bottom,
+.decor-item--about-top,
 .decor-item--footer-bottom,
 .decor-item--footer-top,
 .decor-item--process,
-.decor-item--services,
-.decor-item--top {
+.decor-item--services {
   width: 100%
 }
-.decor-item--bottom svg,
+.decor-item--about-bottom svg,
+.decor-item--about-top svg,
 .decor-item--footer-bottom svg,
 .decor-item--footer-top svg,
 .decor-item--process svg,
-.decor-item--services svg,
-.decor-item--top svg {
+.decor-item--services svg {
   width: 100%
 }
-.decor-item--top {
+.decor-item--about-bottom._watcher-view,
+.decor-item--about-top._watcher-view,
+.decor-item--footer-bottom._watcher-view,
+.decor-item--footer-top._watcher-view,
+.decor-item--process._watcher-view,
+.decor-item--services._watcher-view {
+  transition: all 2s linear .2s
+}
+.decor-item--about-top {
   top: 0;
   left: 50%;
   --tw-translate-x: -50%;
@@ -951,7 +951,7 @@ body {
   -webkit-transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
-.decor-item--bottom {
+.decor-item--about-bottom {
   bottom: 0;
   right: 50%;
   --tw-translate-x: 50%;
@@ -1462,6 +1462,38 @@ body::after {
   border-width: 0;
   padding: 0
 }
+.btn-up {
+  -webkit-tap-highlight-color: transparent;
+  position: fixed;
+  right: 0;
+  bottom: 3rem;
+  z-index: 10;
+  display: flex;
+  height: 3.5rem;
+  width: 3.5rem;
+  --tw-rotate: 180deg;
+  -webkit-transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-start-end-radius: 1rem;
+  border-end-end-radius: 1rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(195 189 151 / var(--tw-bg-opacity,1))
+}
+.btn-up::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  --tw-content: "";
+  content: var(--tw-content)
+}
+.btn-up_hide {
+  display: none
+}
 .lock body {
   overflow: hidden;
   touch-action: none;
@@ -1564,7 +1596,7 @@ body::after {
   }
 }
 @media (min-width:640px) {
-  .decor-item--bottom {
+  .decor-item--about-bottom {
     --tw-translate-y: -110%;
     -webkit-transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
@@ -1639,6 +1671,9 @@ body::after {
   .md\:mb-0 {
     margin-bottom: 0
   }
+  .md\:mt-\[112px\] {
+    margin-top: 112px
+  }
   .md\:flex {
     display: flex
   }
@@ -1688,12 +1723,12 @@ body::after {
     height: 60px;
     width: 60px
   }
-  .decor-item--top {
+  .decor-item--about-top {
     --tw-translate-y: -15%;
     -webkit-transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
   }
-  .decor-item--bottom {
+  .decor-item--about-bottom {
     --tw-translate-y: 40%;
     -webkit-transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
@@ -1759,12 +1794,12 @@ body::after {
   }
 }
 @media (min-width:1280px) {
-  .decor-item--bottom,
+  .decor-item--about-bottom,
+  .decor-item--about-top,
   .decor-item--footer-bottom,
   .decor-item--footer-top,
   .decor-item--process,
-  .decor-item--services,
-  .decor-item--top {
+  .decor-item--services {
     width: 110%
   }
   .contact__item {
@@ -1800,11 +1835,12 @@ body::after {
 }
 @media (any-hover:hover) {
   .button:hover {
-    background: linear-gradient(90deg,#c3bd97 0,#d9d9d9 100%)
+    background: linear-gradient(90deg,#c3bd97 0,#d9d9d9 100%);
+    color: #0b0c10
   }
   .contact__item:hover .contact__icon svg * {
     transition: all .1s linear 0s;
-    fill: #c3bd97
+    stroke: #c3bd97
   }
   .contact__item:hover .contact__info {
     transition: all .1s linear 0s;
@@ -1827,5 +1863,10 @@ body::after {
   .soc1al__link:hover svg * {
     transition: all .1s linear 0s;
     fill: #c3bd97
+  }
+}
+@media (hover:hover)and (pointer:fine) {
+  .btn-up:hover {
+    background-color: #d9d9d9
   }
 }

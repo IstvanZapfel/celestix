@@ -58,6 +58,31 @@
             return self.indexOf(item) === index;
         }));
     }
+    function buttonup() {
+        const btnUp = {
+            el: document.querySelector(".btn-up"),
+            show() {
+                this.el.classList.remove("btn-up_hide");
+            },
+            hide() {
+                this.el.classList.add("btn-up_hide");
+            },
+            addEventListener() {
+                window.addEventListener("scroll", (() => {
+                    const scrollY = window.scrollY || document.documentElement.scrollTop;
+                    scrollY > 300 ? this.show() : this.hide();
+                }));
+                document.querySelector(".btn-up").onclick = () => {
+                    window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: "smooth"
+                    });
+                };
+            }
+        };
+        btnUp.addEventListener();
+    }
     class Popup {
         constructor(options) {
             let config = {
@@ -273,7 +298,6 @@
         _openToHash() {
             let classInHash = document.querySelector(`.${window.location.hash.replace("#", "")}`) ? `.${window.location.hash.replace("#", "")}` : document.querySelector(`${window.location.hash}`) ? `${window.location.hash}` : null;
             const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash.replace(".", "#")}"]`);
-            this.youTubeCode = buttons.getAttribute(this.options.youtubeAttribute) ? buttons.getAttribute(this.options.youtubeAttribute) : null;
             if (buttons && classInHash) this.open(classInHash);
         }
         _setHash() {
@@ -741,6 +765,7 @@
     da.init();
     window["FLS"] = true;
     menuInit();
+    buttonup();
     formFieldsInit({
         viewPass: false,
         autoHeight: true
