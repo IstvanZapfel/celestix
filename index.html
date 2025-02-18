@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20250210132222">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250218123229">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,16 +27,16 @@
 						</button>
 						<nav class="menu__body">
 							<ul class="md:flex lg:gap-10 gap-3 text-xs font-bold items-center">
-								<li><a href="#about-section" class="menu-link">ABOUT</a></li>
-								<li><a href="#services-section" class="menu-link">SERVICES</a></li>
-								<li><a href="#projects-section" class="menu-link">PROJECTS</a></li>
-								<li><a href="#process-section" class="menu-link">HOW TO</a></li>
+								<li><a data-goto=".about" href="#" class="menu-link">ABOUT</a></li>
+								<li><a data-goto=".services" href="#" class="menu-link">SERVICES</a></li>
+								<li><a data-goto=".projects" href="#" class="menu-link">PROJECTS</a></li>
+								<li><a data-goto=".process" href="#" class="menu-link">HOW TO</a></li>
 							</ul>
 						</nav>
 					</div>
-					<div data-da=".menu__body,767.98,0" class="action mb-14 md:mb-0 md:inline-flex">
-						<a href="#contact-section" class="button button--header mr-2 lg:mr-8">CONTACT US</a>
-						<a href="#" class="button button--header">JOIN US</a>
+					<div data-da=".menu__body,767.98,2" class="action mt-14 md:mt-0 md:inline-flex text-center">
+						<a data-goto=".contacts" href="#" class="button button--header mr-2 lg:mr-8">CONTACT US</a>
+						<a data-goto=".join" href="#" class="button button--header">JOIN US</a>
 					</div>
 				</div>
 			</div>
@@ -188,7 +188,7 @@
 					</div>
 				</div>
 			</section>
-			<section id="about-section" class="about mb-[7rem]" aria-labelledby="about__title">
+			<section class="about mb-[7rem]" aria-labelledby="about__title">
 				<div class="about__container">
 					<div class="about__body relative flex flex-col items-center lg:flex-row lg:justify-between lg:gap-8">
 						<div data-watch class="about__decor decor-item decor-item--about-top">
@@ -235,7 +235,7 @@
 					</div>
 				</div>
 			</section>
-			<section id="services-section" class="services mb-[7.2rem]" aria-labelledby="services__title">
+			<section class="services mb-[7.2rem]" aria-labelledby="services__title">
 				<div class="services__container">
 					<div class="services__body mb-[6.25rem] lg:flex items-end gap-2">
 						<div class="services__name grow shrink basis-2/4 mb-12 lg:mb-0">
@@ -364,7 +364,7 @@
 					</div>
 				</div>
 			</section>
-			<section id="projects-section" class="projects mb-[100px]" aria-labelledby="projects__title">
+			<section class="projects mb-[100px]" aria-labelledby="projects__title">
 				<div class="projects__container">
 					<div class="projects__body bg-projects-bg bg-cover bg-center bg-no-repeat rounded-[60px] md:rounded-[160px] h-[303px] text-center">
 						<div class="projects__info">
@@ -444,7 +444,7 @@
 					</div>
 				</div>
 			</section>
-			<section id="process-section" class="process mb-[7.2rem]" aria-labelledby="process__title">
+			<section class="process mb-[7.2rem]" aria-labelledby="process__title">
 				<div class="process__container">
 					<div class="process__body mb-[3.2rem] sm:mb-[9.37rem] lg:flex items-end gap-2">
 						<div class="process__name grow shrink basis-2/4 mb-12 lg:mb-0">
@@ -531,7 +531,7 @@
 					</div>
 				</div>
 			</section>
-			<section id="contact-section" class="join mb-[114px]" aria-labelledby="join__title">
+			<section class="join mb-[114px]" aria-labelledby="join__title">
 				<div class="join__container">
 					<div class="join__body">
 						<h2 data-watch class="join__title section-title text-center mx-auto" id="join__title">JOIN Celestix</h2>
@@ -710,7 +710,7 @@
 				</div>
 				<div class="footer__copyright mt-16 py-12 text-center border-t-[0.063rem] border-t-[#706D5B]">
 					<p>2024 © CELESTIX STUDIO, created by THORNS - ALL RIGHTS RESERVED </p>
-				</div>				
+				</div>
 			</div>
 		</footer>
 	</div>
@@ -733,7 +733,7 @@
 	<div class="btn-up btn-up_hide">
 		<img src="img/icons/shape.svg" alt="up-arrow">
 	</div>
-	<script src="js/app.min.js?_v=20250210132222"></script>
+	<script src="js/app.min.js?_v=20250218123229"></script>
 </body>
 
 </html>
